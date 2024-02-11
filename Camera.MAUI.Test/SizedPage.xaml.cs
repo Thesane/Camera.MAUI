@@ -1,5 +1,5 @@
 //using Camera.MAUI.MLKit;
-using Camera.MAUI.ZXing;
+//using Camera.MAUI.ZXing;
 using CommunityToolkit.Maui.Views;
 using System.Diagnostics;
 
@@ -29,17 +29,17 @@ public partial class SizedPage : ContentPage
 		InitializeComponent();
         cameraView.CamerasLoaded += CameraView_CamerasLoaded;
         cameraView.MicrophonesLoaded += CameraView_MicrophonesLoaded;
-        cameraView.BarcodeDetected += CameraView_BarcodeDetected;
-        cameraView.BarCodeDecoder = new ZXingBarcodeDecoder();
+        //cameraView.BarcodeDetected += CameraView_BarcodeDetected;
+        //cameraView.BarCodeDecoder = new ZXingBarcodeDecoder();
         //cameraView.BarCodeDecoder = new MLKitBarcodeDecoder();
-        cameraView.BarCodeOptions = new BarcodeDecodeOptions
-        {
-            AutoRotate = true,
-            PossibleFormats = { BarcodeFormat.QR_CODE },
-            ReadMultipleCodes = false,
-            TryHarder = false,
-            TryInverted = true
-        };
+        //cameraView.BarCodeOptions = new BarcodeDecodeOptions
+        //{
+        //    AutoRotate = true,
+        //    PossibleFormats = { BarcodeFormat.QR_CODE },
+        //    ReadMultipleCodes = false,
+        //    TryHarder = false,
+        //    TryInverted = true
+        //};
         BindingContext = cameraView;
     }
 

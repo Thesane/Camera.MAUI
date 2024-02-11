@@ -1,4 +1,4 @@
-using Camera.MAUI.ZXing;
+//using Camera.MAUI.ZXing;
 
 namespace Camera.MAUI.Test;
 
@@ -10,16 +10,16 @@ public partial class FullScreenPage : ContentPage
 		InitializeComponent();
         cameraView.CamerasLoaded += CameraView_CamerasLoaded;
         cameraView.BarcodeDetected += CameraView_BarcodeDetected;
-        cameraView.BarCodeDecoder = (IBarcodeDecoder)new ZXingBarcodeDecoder();
-        cameraView.BarCodeOptions = new BarcodeDecodeOptions
-        {
-            AutoRotate = true,
-            PossibleFormats = { BarcodeFormat.QR_CODE },
-            ReadMultipleCodes = false,
-            TryHarder = false,
-            TryInverted = true
-        };
-        cameraView.BarCodeDetectionEnabled = true;
+        //cameraView.BarCodeDecoder = (IBarcodeDecoder)new ZXingBarcodeDecoder();
+        //cameraView.BarCodeOptions = new BarcodeDecodeOptions
+        //{
+        //    AutoRotate = true,
+        //    PossibleFormats = { BarcodeFormat.QR_CODE },
+        //    ReadMultipleCodes = false,
+        //    TryHarder = false,
+        //    TryInverted = true
+        //};
+        //cameraView.BarCodeDetectionEnabled = true;
     }
 
     private void CameraView_BarcodeDetected(object sender, ZXingHelper.BarcodeEventArgs args)

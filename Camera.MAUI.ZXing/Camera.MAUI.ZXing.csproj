@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0;net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net8.0;net8.0-android;net8.0-ios;net8.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
 		<UseMaui>true</UseMaui>
@@ -18,9 +18,9 @@
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<Title>Barcode encode/decode pluging for use with Camera.MAUI</Title>
 		<Version>1.0.0</Version>
-		<Authors>hjam40</Authors>
+		<Authors>thesane</Authors>
 		<Description>A Barcode Endode/Decode control (based on ZXing.Net) for use with Camera.MAUI in  .NET MAUI applications.</Description>
-		<PackageProjectUrl>https://github.com/hjam40/Camera.MAUI</PackageProjectUrl>
+		<PackageProjectUrl>https://github.com/thesane/Camera.MAUI</PackageProjectUrl>
 		<PackageReadmeFile>Readme.md</PackageReadmeFile>
 		<PackageIcon>camera.maui.png</PackageIcon>
 		<RepositoryUrl>https://github.com/hjam40/Camera.MAUI</RepositoryUrl>
@@ -41,8 +41,6 @@
 
 	<ItemGroup>
 	  <Folder Include="Platforms\iOS\" />
-	  <Folder Include="Platforms\MacCatalyst\" />
-	  <Folder Include="Platforms\Tizen\" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -54,6 +52,14 @@
 	    <Pack>True</Pack>
 	    <PackagePath>\</PackagePath>
 	  </None>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Maui.Controls" Version="8.0.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.6" />
 	</ItemGroup>
 
 </Project>

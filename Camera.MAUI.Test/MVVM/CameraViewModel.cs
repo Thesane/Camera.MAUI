@@ -5,12 +5,12 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZXing;
+//using ZXing;
 using System.Windows.Markup;
 using System.Collections.Specialized;
 using Camera.MAUI.ZXingHelper;
 using CommunityToolkit.Maui.Views;
-using Camera.MAUI.ZXing;
+//using Camera.MAUI.ZXing;
 
 namespace Camera.MAUI.Test;
 
@@ -91,20 +91,20 @@ public class CameraViewModel : INotifyPropertyChanged
     public string BarcodeText { get; set; } = "No barcode detected";
     public bool AutoStartPreview { get; set; } = false;
     public bool AutoStartRecording { get; set; } = false;
-    private Result[] barCodeResults;
-    public Result[] BarCodeResults 
-    {
-        get => barCodeResults;
-        set
-        {
-            barCodeResults = value;
-            if (barCodeResults != null && barCodeResults.Length > 0)
-                BarcodeText = barCodeResults[0].Text;
-            else
-                BarcodeText = "No barcode detected";
-            OnPropertyChanged(nameof(BarcodeText));
-        }
-    }
+    //private Result[] barCodeResults;
+    //public Result[] BarCodeResults 
+    //{
+    //    get => barCodeResults;
+    //    set
+    //    {
+    //        barCodeResults = value;
+    //        if (barCodeResults != null && barCodeResults.Length > 0)
+    //            BarcodeText = barCodeResults[0].Text;
+    //        else
+    //            BarcodeText = "No barcode detected";
+    //        OnPropertyChanged(nameof(BarcodeText));
+    //    }
+    //}
     private bool takeSnapshot = false;
     public bool TakeSnapshot 
     { 
@@ -143,16 +143,16 @@ public class CameraViewModel : INotifyPropertyChanged
     }
     public CameraViewModel()
     {
-        BarcodeDecoder = (IBarcodeDecoder)(new ZXingBarcodeDecoder());
-        BarCodeOptions = new BarcodeDecodeOptions
-        {
-            AutoRotate = true,
-            PossibleFormats = { BarcodeFormat.QR_CODE },
-            ReadMultipleCodes = false,
-            TryHarder = true,
-            TryInverted = true
-        };
-        OnPropertyChanged(nameof(BarCodeOptions));
+        //BarcodeDecoder = (IBarcodeDecoder)(new ZXingBarcodeDecoder());
+        //BarCodeOptions = new BarcodeDecodeOptions
+        //{
+        //    AutoRotate = true,
+        //    PossibleFormats = { BarcodeFormat.QR_CODE },
+        //    ReadMultipleCodes = false,
+        //    TryHarder = true,
+        //    TryInverted = true
+        //};
+        //OnPropertyChanged(nameof(BarCodeOptions));
         StartCamera = new Command(() =>
         {
             AutoStartPreview = true;
